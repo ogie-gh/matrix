@@ -1,0 +1,32 @@
+name: dynamic-test-matrix
+
+on:
+  workflow_dispatch:
+
+jobs:
+  matrix:
+    name: Generate test matrix
+    runs-on: ubuntu-latest
+    outputs:
+      matrix-json: ${{ steps.set-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v2
+      - id: set-matrix
+        shell: pwsh
+        # Use a small PowerShell script to generate the test matrix
+        run: "& .github/workflows/create-test-matrix.ps1"
+
+  run-matrix:
+    needs: [matrix]
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.matrix.outputs.matrix-json) }}
+    name: "${{ matrix.job_name }}"
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run Command
+        shell: pwsh
+        run: |
+          Write-Host "Run '${{ matrix.command }}'"
