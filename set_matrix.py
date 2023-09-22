@@ -9,14 +9,14 @@ def set_output(value):
 # Create a list of dictionaries representing the jobs
 jobs = [
     {
-        "job_name": "Run ubuntu-latest jobs",
-        "command": "ubuntu-latest command",
-        "os": "ubuntu-latest"
+        "key": "ABC",
+        "summary": "This is my ABC Summary",
+        "description": "This is my ABC description"
     },
     {
-        "job_name": "Run windows-latest jobs",
-        "command": "windows-latest command",
-        "os": "windows-latest"
+        "key": "TST",
+        "summary": "This is my TST Summary",
+        "description": "This is my TST description"
     }
 ]
 
