@@ -22,11 +22,13 @@ jobs:
       fail-fast: false
       matrix:
         include: ${{ fromJson(needs.matrix.outputs.matrix-json) }}
-    name: "${{ matrix.job_name }}"
-    runs-on: ${{ matrix.os }}
+    name: create with matrix
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Run Command
-        shell: bash
-        run: |
-          echo "${{ matrix.command }}"
+      - name: Let's create multiples
+        id: derp
+        uses: ogie-gh/derp/notifications@main
+        with:
+         prefix: "${{ matrix.prefix }}"
+         summary: "${{ matrix.summary }}"
+         description: "${{ matrix.description }}"
