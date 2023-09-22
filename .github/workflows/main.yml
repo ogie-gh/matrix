@@ -25,7 +25,7 @@ jobs:
     name: create with matrix
     runs-on: ubuntu-latest
     steps:
-      - name: Let's create multiples
+      - name: create notifications
         id: derp
         uses: ogie-gh/derp/notifications@main
         with:
