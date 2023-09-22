@@ -9,12 +9,12 @@ def set_output(value):
 # Create a list of dictionaries representing the jobs
 jobs = [
     {
-        "key": "ABC",
+        "prefix": "ABC",
         "summary": "This is my ABC Summary",
         "description": "This is my ABC description"
     },
     {
-        "key": "TST",
+        "prefix": "TST",
         "summary": "This is my TST Summary",
         "description": "This is my TST description"
     }
