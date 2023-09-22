@@ -21,7 +21,7 @@ jobs = [
 ]
 
 # Convert the list of dictionaries to a JSON string
-json_str = json.dumps(jobs, indent=2)
+json_str = json.dumps(jobs, separators=(',', ':'))
 
 # Print the JSON string
 print(json_str)
