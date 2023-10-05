@@ -11,12 +11,14 @@ jobs = [
     {
         "prefix": "ABC",
         "summary": "This is my ABC Summary",
-        "description": "This is my ABC description"
+        "description": "This is my ABC description",
+        "labels": []
     },
     {
         "prefix": "TST",
         "summary": "This is my TST Summary",
-        "description": "This is my TST description"
+        "description": "This is my TST description",
+        "labels": [yep]
     }
 ]
 
